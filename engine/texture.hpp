@@ -11,6 +11,8 @@ namespace zd {
     class Texture {
     public:
         Texture(Application& app, std::string path);
+        Texture(Application& app, SDL_Surface* surface);
+        Texture(const Texture& texture);
         ~Texture();
 
         SDL_Texture* getTexture();

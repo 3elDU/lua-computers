@@ -22,6 +22,22 @@ namespace zd {
         SDL_FreeSurface(surface);
     }
 
+    Texture::Texture(Application& app, SDL_Surface* surface) {
+        tex = SDL_CreateTextureFromSurface(app.ren, surface);
+        if (tex == nullptr) {
+            app.panic("failed to create texture");
+        }
+
+        width = surface->w;
+        height = surface->h;
+    }
+
+    Texture::Texture(const Texture& texture) {
+        tex = texture.tex;
+        width = texture.width;
+        height = texture.height;
+    }
+
     Texture::~Texture() {
         SDL_DestroyTexture(tex);
     }
