@@ -4,6 +4,9 @@
 #include "engine/engine.hpp"
 #include "engine/texture.hpp"
 
+// include the emulator
+#include "emu/emulator.hpp"
+
 int main(int argc, char** argv) {
     // create application
     zd::Application app(640, 480, "ZD Engine");
